@@ -16,6 +16,8 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.cura.Exceptions.InvalidExcelFilePathUsageException;
+
 /**
  *Nov 8, 2024
  *@author Praveen Sarangan
@@ -45,10 +47,6 @@ public final class ReadExcelFile {
 			short columnNum = sheet.getRow(0).getLastCellNum();
 			
 			
-			
-			
-			
-
 			for(int i=1;i<=rowNum;i++) {
 				
 				Map<String,String> map =new HashMap<>();
@@ -66,9 +64,10 @@ public final class ReadExcelFile {
 				list.add(map);
 			}
 		} catch (IOException e) {
-			 System.err.println("Error reading Excel file: " + e.getMessage());
-			throw new RuntimeException("Error reading Excel file:",e);
+			
+			throw new InvalidExcelFilePathUsageException("Error reading Excel file:",e);
 		}
+		
 		
 		
 		return list;

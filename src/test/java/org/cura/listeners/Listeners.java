@@ -12,12 +12,12 @@ import com.cura.reports.ExtentLogger;
 import com.cura.reports.ExtentReport;
 
 /**
-*Nov 6, 2024
-*@author Praveen Sarangan
-*@version 1.0
-*@since 1.0
-*/
-public class Listeners implements ITestListener,ISuiteListener{
+ *Nov 6, 2024
+ *@author Praveen Sarangan
+ *@version 1.0
+ *@since 1.0
+ */
+public final class Listeners implements ITestListener,ISuiteListener{
 
 	@Override
 	public void onStart(ISuite suite) {
@@ -41,13 +41,12 @@ public class Listeners implements ITestListener,ISuiteListener{
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		
-		try {
-			ExtentLogger.fail(result.getMethod().getMethodName()+" is Failled",true);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+
+
+		ExtentLogger.fail(result.getMethod().getMethodName()+" is Failled",true);
+
+
 		ExtentLogger.fail(result.getThrowable().toString());
 	}
 
@@ -56,5 +55,5 @@ public class Listeners implements ITestListener,ISuiteListener{
 		ExtentLogger.skip(result.getMethod().getMethodName()+" is Skipped");
 	}
 
-	
+
 }

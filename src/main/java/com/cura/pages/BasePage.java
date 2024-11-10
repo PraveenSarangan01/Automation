@@ -40,4 +40,8 @@ public class BasePage {
 		return DriverManager.getDriver().getTitle();
 
 	}
+	protected String getUrl() {
+		return DriverManager.getDriver().getCurrentUrl();
+
+	}
 }

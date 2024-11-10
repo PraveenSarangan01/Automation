@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.cura.driver.DriverManager;
-import com.cura.pages.CuraHealthCareMenuBarPage;
+import com.cura.pages.MakeAppoinmentPage;
 import com.cura.pages.HomePage;
 import com.cura.pages.LoginPage;
 
@@ -45,7 +45,7 @@ public final class LoginPageTest extends BaseTest{
 		.enterPassword(data.get("password"))
 		.clickLoginBtn();
 		
-		new CuraHealthCareMenuBarPage()
+		new MakeAppoinmentPage()
 		.clickMenuBar()
 		.clickLogout();
 		
@@ -67,7 +67,7 @@ public final class LoginPageTest extends BaseTest{
 		.enterPassword(data.get("password"))
 		.clickLoginBtn();
 		
-		new CuraHealthCareMenuBarPage()
+		new MakeAppoinmentPage()
 		.clickMenuBar()
 		.clickLogout();
 		

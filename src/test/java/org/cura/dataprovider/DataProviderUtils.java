@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import org.testng.annotations.DataProvider;
 
@@ -26,6 +27,9 @@ public final class DataProviderUtils {
 		String testName = m.getName();
 		
 		List<Map<String, String>> list=ReadExcelFile.getLoginData("login");
+		if(Objects.isNull(list)) {
+			System.err.println("EXcel File is empty");
+		}
 		
 		List<Map<String,String>> smallList= new ArrayList<>();
 	for(int i=0;i<list.size();i++) {
@@ -43,7 +47,9 @@ public final class DataProviderUtils {
 		
 		
 		
-		
+		if(smallList.isEmpty()) {
+			System.err.println("Testcase name Not Matching");
+		}
 		
 		return smallList.toArray();
 		

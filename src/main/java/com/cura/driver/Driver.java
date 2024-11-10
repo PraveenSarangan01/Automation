@@ -15,10 +15,6 @@ public final class Driver {
 		
 	}
 	
-	
-	
-	
-	
 
 	public static void initDriver() throws Exception {
 		if(Objects.isNull(DriverManager.getDriver())) {

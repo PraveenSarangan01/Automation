@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.cura.tests.LoginPageTest">
+      <class name="org.cura.tests.VerifyLoginWithValidCredentials">
         <methods>
-          <include name="LoginTest"/>
-          <include name="newTest"/>
           <include name="setUp"/>
+          <include name="loginTest" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- org.cura.tests.LoginPageTest -->
+      </class> <!-- org.cura.tests.VerifyLoginWithValidCredentials -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

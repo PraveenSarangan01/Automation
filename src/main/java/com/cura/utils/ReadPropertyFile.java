@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
 
+import com.cura.Exceptions.PropertyFileUsageException;
 import com.cura.constants.FrameworkConstants;
 import com.cura.enums.ConfigProperty;
 
@@ -25,20 +26,14 @@ public final class ReadPropertyFile {
 	}
 	
 	public static String getValue(ConfigProperty key)  {
-		String value ="";
 		
 		
-		try {
-			value = property.getProperty(key.name().toLowerCase());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
+		if(Objects.isNull(key)||Objects.isNull(property.getProperty(key.name().toLowerCase()))){
+			throw new PropertyFileUsageException("property name"+key+"is not found, please Check config.property");
 		}
-		if(Objects.isNull(key)) {
-			System.out.println("property name"+key+"is not found, please Check config.property");
-			//throw new Exception("property name"+key+"is not found, please Check config.property");
-		}
-		return value;
+		
+		return property.getProperty(key.name().toLowerCase());
 		
 	
 	}

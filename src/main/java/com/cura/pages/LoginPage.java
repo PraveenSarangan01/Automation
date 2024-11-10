@@ -25,10 +25,10 @@ public class LoginPage extends BasePage{
 		//ExtentLogger.pass("Password Entered");
 		return this;
 	}
-	public CuraHealthCareMenuBarPage clickLoginBtn() {
+	public MakeAppoinmentPage clickLoginBtn() {
 		click(loginBtn, WaitStrategy.CLICKABLE,"LoginBtn");
 		//ExtentLogger.pass("LoginButton Clicked");
-		return new CuraHealthCareMenuBarPage();
+		return new MakeAppoinmentPage();
 	}
 	
 
