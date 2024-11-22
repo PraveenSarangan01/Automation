@@ -4,6 +4,8 @@ public enum WaitStrategy {
 	CLICKABLE,
 	PRESENCE,
 	VISIBLE,
-	NONE;
+	NONE,
+	PRESENCE_OF_ALL,
+	VISIBLITY_OF_ALL;
 
 }

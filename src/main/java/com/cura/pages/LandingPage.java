@@ -4,17 +4,17 @@ import org.openqa.selenium.By;
 
 import com.cura.enums.WaitStrategy;
 
-public class HomePage extends BasePage{
+public class LandingPage extends BasePage{
 
-	private final By menu=By.xpath("//a[@id='menu-toggle']//i[1]");
+	
 	private final By loginLink= By.xpath("//a[text()='Login']");
 	private final By homeLink=By.xpath("//a[text()='Home']");
 
 
-	public HomePage clickMenu() {
-		click(menu, WaitStrategy.CLICKABLE,"Menu");
+	public CuraHealthcareMenu clickMenu() {
+		clcikHealthcareMenu(WaitStrategy.CLICKABLE,"Menu Bar");
 		//ExtentLogger.pass("Menu Clicked");	
-		return this;
+		return new CuraHealthcareMenu();
 	}
 
 	public LoginPage clickLoginLink() {
@@ -23,7 +23,7 @@ public class HomePage extends BasePage{
 		return new LoginPage();
 	}
 
-	public HomePage clickHomeLink() {
+	public LandingPage clickHomeLink() {
 		click(homeLink, WaitStrategy.CLICKABLE,"Home Link");
 		//ExtentLogger.pass("Home Link Clicked");		
 		return this;

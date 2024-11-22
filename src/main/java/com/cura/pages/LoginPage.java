@@ -2,6 +2,7 @@ package com.cura.pages;
 
 import org.openqa.selenium.By;
 
+import com.cura.driver.DriverManager;
 import com.cura.enums.WaitStrategy;
 
 public class LoginPage extends BasePage{
@@ -11,6 +12,8 @@ public class LoginPage extends BasePage{
 	
 	private final By textBoxpassword=By.id("txt-password");
 	private final By loginBtn=By.id("btn-login");
+	
+	private final By errMsg =By.xpath("//p[@class='lead text-danger']");
 	
 	
 	public LoginPage enterUsername(String userName) {
@@ -31,5 +34,8 @@ public class LoginPage extends BasePage{
 		return new MakeAppoinmentPage();
 	}
 	
+	public String getErrorMessage() {
+	return	DriverManager.getDriver().findElement(errMsg).getText();
+	}
 
 }

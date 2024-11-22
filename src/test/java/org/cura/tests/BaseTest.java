@@ -10,8 +10,8 @@ public class BaseTest {
 	protected BaseTest() {
 
 	}
-	
-	
+
+
 
 
 	@BeforeMethod

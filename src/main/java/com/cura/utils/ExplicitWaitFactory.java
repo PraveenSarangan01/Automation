@@ -1,5 +1,7 @@
 package com.cura.utils;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,11 +29,34 @@ public class ExplicitWaitFactory {
 			
 		case VISIBLE:
 		return	driverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
+		
+		
 			
 			
 			default:
 				throw new IllegalArgumentException("Invalid wait strategy: " + waitStratergy);
 		}
 	}
+	
+	
+	
+public static List<WebElement> performExplicitWaitWithList(WaitStrategy waitStratergy, By by) {
+			
+WebDriverWait driverWait =new WebDriverWait(DriverManager.getDriver(),timeOut );
+			
 
+	switch(waitStratergy) {
+			case PRESENCE_OF_ALL:
+		    return	driverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+
+			case VISIBLITY_OF_ALL:
+				return driverWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+	
+			default:
+				throw new IllegalArgumentException("Invalid wait strategy: " + waitStratergy);
+	
+	
+	}
+	
+		}
 }

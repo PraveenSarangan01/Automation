@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 11 04:17:07 IST 2024</td>
+<td>Started on:</td><td>Tue Nov 19 17:09:19 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>6 seconds (6250 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10490 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,11 +75,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='org.cura.tests.VerifyLoginWithValidCredentials.loginTest()'><b>loginTest</b><br>Test class: org.cura.tests.VerifyLoginWithValidCredentials<br>Parameters: {password=ThisIsNotAPassword, firstname=,, testname=loginTest, execute=yes, username=John Doe}</td>
-<td><div><pre>java.lang.AssertionError: 
-expected: &quot;Make Appointment&quot;
- but was: &quot;&quot;
-	at org.cura.tests.VerifyLoginWithValidCredentials.loginTest(VerifyLoginWithValidCredentials.java:56)
+<td title='org.cura.tests.AppoinmentBooking.verifyUserCanBookAppoinment()'><b>verifyUserCanBookAppoinment</b><br>Test class: org.cura.tests.AppoinmentBooking<br>Parameters: {testdata=Hongkong CURA Healthcare Center,Medicaid,02/12/2024,cough and fever, password=ThisIsNotAPassword, testname=verifyUserCanBookAppoinment, execute=yes, expectedvalue=Please be informed that your appointment has been booked as following:, username=John Doe}</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String, com.aventstack.extentreports.model.Media)&quot; because the return value of &quot;com.cura.reports.ExtentManager.getExtentTest()&quot; is null
+	at com.cura.reports.ExtentLogger.pass(ExtentLogger.java:38)
+	at com.cura.pages.BasePage.selectDropDown(BasePage.java:93)
+	at com.cura.pages.MakeAppoinmentPage.selectFacility(MakeAppoinmentPage.java:64)
+	at org.cura.tests.AppoinmentBooking.verifyUserCanBookAppoinment(AppoinmentBooking.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -108,11 +109,12 @@ expected: &quot;Make Appointment&quot;
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1702178880", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1702178880'><pre>java.lang.AssertionError: 
-expected: &quot;Make Appointment&quot;
- but was: &quot;&quot;
-	at org.cura.tests.VerifyLoginWithValidCredentials.loginTest(VerifyLoginWithValidCredentials.java:56)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1878677242", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1878677242'><pre>java.lang.NullPointerException: Cannot invoke &quot;com.aventstack.extentreports.ExtentTest.pass(String, com.aventstack.extentreports.model.Media)&quot; because the return value of &quot;com.cura.reports.ExtentManager.getExtentTest()&quot; is null
+	at com.cura.reports.ExtentLogger.pass(ExtentLogger.java:38)
+	at com.cura.pages.BasePage.selectDropDown(BasePage.java:93)
+	at com.cura.pages.MakeAppoinmentPage.selectFacility(MakeAppoinmentPage.java:64)
+	at org.cura.tests.AppoinmentBooking.verifyUserCanBookAppoinment(AppoinmentBooking.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -142,8 +144,8 @@ expected: &quot;Make Appointment&quot;
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>1</td>
-<td>org.cura.tests.VerifyLoginWithValidCredentials@4d910fd6</td></tr>
+<td>3</td>
+<td>org.cura.tests.AppoinmentBooking@4d910fd6</td></tr>
 </table><p>
 </body>
 </html>
